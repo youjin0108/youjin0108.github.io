@@ -203,13 +203,26 @@
 <div class="container body-wrap">
     <article class="page-article fade" itemprop="blogPage">
         
-            <div class="card page-about-me flex-row">
-                <a href="/" class="avatar waves-effect waves-circle waves-light"><img src="/img/avatar.jpg"></a>
-                <div class="content flex-col">
-                    <p><strong>Liu Jian</strong></p>
-                    <p><em>Liu Jian の Blog</em></p>
-                    <p>Liu Jian の Blog</p>
-                </div>
+            <div class="post-content page-content" id="page-content" itemprop="pageContent">
+                <script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
         
 
