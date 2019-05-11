@@ -5,9 +5,9 @@
   <subtitle>Liu Jian の Blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://liujan.top/"/>
+  <link href="https://liujan.top/"/>
   <updated>2019-05-10T08:16:36.437Z</updated>
-  <id>http://liujan.top/</id>
+  <id>https://liujan.top/</id>
   
   <author>
     <name>Liu Jian</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Test1</title>
-    <link href="http://liujan.top/2019/05/09/Test1/"/>
-    <id>http://liujan.top/2019/05/09/Test1/</id>
+    <link href="https://liujan.top//posts/4b73f3e6/"/>
+    <id>https://liujan.top//posts/4b73f3e6/</id>
     <published>2019-05-09T04:59:41.000Z</published>
     <updated>2019-05-10T08:16:36.437Z</updated>
     
@@ -32,17 +32,17 @@
     </summary>
     
     
-      <category term="文章" scheme="http://liujan.top/categories/%E6%96%87%E7%AB%A0/"/>
+      <category term="文章" scheme="https://liujan.top/categories/%E6%96%87%E7%AB%A0/"/>
     
     
-      <category term="测试" scheme="http://liujan.top/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="测试" scheme="https://liujan.top/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://liujan.top/2019/05/08/hello-world/"/>
-    <id>http://liujan.top/2019/05/08/hello-world/</id>
+    <link href="https://liujan.top//posts/16107/"/>
+    <id>https://liujan.top//posts/16107/</id>
     <published>2019-05-08T05:54:46.874Z</published>
     <updated>2019-05-08T14:19:23.413Z</updated>
     
