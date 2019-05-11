@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta http-equiv="Content-Language" content="zh-cn">
+    <meta charset="utf-8">
+    
+    
+    
+    <title>使用Hexo和GitHub搭建个人博客 | Hi | Liu Jian の Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <meta name="theme-color" content="#77AAFF">
+    
+    
+    <meta name="keywords" content="Hexo">
+    
+    
+
+    
+
+    <!-- Baidu Push -->
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+
+	var _hmt = _hmt || [];
+</script>
+
+
+
+    
+    <meta name="description" content="前言网上已经有许多教程了,我的也差不多。就是想纪念一下我的个人博客,也方便小伙伴们来参考一下,手把手教,有图有文,一步一步,小白也可以做。 😎">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Hexo和GitHub搭建个人博客">
+<meta property="og:url" content="https://liujan.top/posts/952d432d/index.html">
+<meta property="og:site_name" content="Hi">
+<meta property="og:description" content="前言网上已经有许多教程了,我的也差不多。就是想纪念一下我的个人博客,也方便小伙伴们来参考一下,手把手教,有图有文,一步一步,小白也可以做。 😎">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/操作界面">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/信息配置">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/生成ssh密钥">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/新建SSH">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/检测">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/检测">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/安装">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/初始化">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/雏形">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/关联">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/部署插件">
+<meta property="og:updated_time" content="2019-05-11T13:40:05.336Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Hexo和GitHub搭建个人博客">
+<meta name="twitter:description" content="前言网上已经有许多教程了,我的也差不多。就是想纪念一下我的个人博客,也方便小伙伴们来参考一下,手把手教,有图有文,一步一步,小白也可以做。 😎">
+<meta name="twitter:image" content="https://liujan.top/posts/952d432d/操作界面">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hi" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link id="style" rel="stylesheet" href="/css/style.css?v=3.0">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+            
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg" alt="avatar">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname" id="name">Liu Jian</h5>
+          
+            <div id="yiyanmotto" class="motto">&nbsp;</div>
+          
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+              <li class="waves-block waves-effect">
+                  <a href="/">
+                    <i class="icon icon-lg icon-home"></i>
+                    <span>主 页</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/archives">
+                    <i class="icon icon-lg icon-archives"></i>
+                    <span>归 档</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/categories">
+                    <i class="icon icon-lg icon-th-list"></i>
+                    <span>分 类</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/tags">
+                    <i class="icon icon-lg icon-tags"></i>
+                    <span>标 签</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/about">
+                    <i class="icon icon-lg icon-smile-o"></i>
+                    <span>关 于</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+      <div class="nav2">
+          
+              <a class="nav2item" data-title="Email" href="mailto:1183143919@qq.com" target="_parent" title="Email">
+                <i class="icon icon-lg icon-envelope-o envelope-o"></i>
+              </a>
+          
+              <a class="nav2item" data-title="Github" href="https://github.com/youjin0108" target="_blank" title="Github">
+                <i class="icon icon-lg icon-github github"></i>
+              </a>
+          
+              <a class="nav2item" data-title="微博" href="https://weibo.com/u/6027193351" target="_blank" title="微博">
+                <i class="icon icon-lg icon-weibo weibo"></i>
+              </a>
+          
+
+            </div>
+        
+      </ul>
+        
+    </div>
+  </div>
+ 
+</aside>
+
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">使用Hexo和GitHub搭建个人博客</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        <a href="../../atom.xml" target="_blank" class="header-icon waves-effect waves-circle waves-light" id="Rss">
+            <i class="icon icon-lg icon-rss"></i>
+        </a>
+    </div>
+</header>
+<header class="content-header post-header">
+    
+    
+    <div class="container fade-scale">
+        <div id="myheader">
+            <h1 class="title">
+                
+            </h1>
+            <h5 class="subtitle">
+                
+                
+            </h5>
+        </div>
+    </div>
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境准备"><span class="post-toc-text">环境准备</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注册GitHub"><span class="post-toc-text">注册GitHub</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载Git"><span class="post-toc-text">下载Git</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载Node"><span class="post-toc-text">下载Node</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-text">安装Hexo</span></a></li></ol>
+        </nav>
+    </aside>
+   
+<article id="post-使用Hexo和GitHub搭建个人博客" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">使用Hexo和GitHub搭建个人博客</h1>
+        <div class="post-meta">
+            <i class="icon icon-lg icon-calendar-o"></i>
+            发表于
+            <time class="post-time" title="2019-05-11 19:36:07" datetime="2019-05-11T11:36:07.000Z" itemprop="datePublished">2019-05-11</time>
+
+            <br id="mybreak">
+            
+<script>
+	mybreak.style="display:none";
+</script>
+
+
+            <i>·</i>
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>次浏览
+</span>
+
+
+        </div>
+        <div class="post-count-custom">
+            <i class="icon icon-lg icon-comment-o"></i>
+            阅读本文可能花费您&nbsp;<span class="post-count">4</span>&nbsp;分钟
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>网上已经有许多教程了,我的也差不多。就是想纪念一下我的个人博客,也方便小伙伴们来参考一下,手把手教,有图有文,一步一步,小白也可以做。 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8">😎</span></p>
+<a id="more"></a>
+<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><h2 id="注册GitHub"><a href="#注册GitHub" class="headerlink" title="注册GitHub"></a>注册GitHub</h2><p>首先我们需要注册一个自己的 <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> ,与一般的注册步骤相同,这里就不作赘述了。 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8">😎</span></p>
+<h2 id="下载Git"><a href="#下载Git" class="headerlink" title="下载Git"></a>下载Git</h2><p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a> 的操作界面和命令行窗口一样,我们之后的一系列操作都要在这个上面进行。<br></p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="操作界面" alt="操作界面" title>
+                </div>
+                <div class="image-caption">操作界面</div>
+            </figure> <p></p>
+<p>下载安装完成后,鼠标右键选择Git Bash,或者在菜单里搜索Git Bash,我们需要进行user.name和user.email信息配置：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "你的GitHub用户名"</span><br><span class="line">git config --global user.email "你的GitHub注册邮箱"</span><br></pre></td></tr></tbody></table></figure><p></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="信息配置" alt="信息配置" title>
+                </div>
+                <div class="image-caption">信息配置</div>
+            </figure>
+<p>生成ssh密钥文件：<br><code>ssh-keygen -t rsa -C "你的GitHub注册邮箱"</code><br>然后直接三个回车即可,默认不需要设置密码,当然你也可以设置。<br></p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="生成ssh密钥" alt="生成ssh密钥" title>
+                </div>
+                <div class="image-caption">生成ssh密钥</div>
+            </figure><p></p>
+<p>打开你的GitHub,点击头像旁边的倒三角,点击Settings,找到SHH and GPS keys,新建SSH keys<br></p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="新建SSH" alt="新建SSH" title>
+                </div>
+                <div class="image-caption">新建SSH</div>
+            </figure><br>Title随便写,找到本地生成的.ssh的文件夹中的id_rsa.pub密钥（上一步有地址）,将内容全部复制进Key,然后Add SHH Key。<p></p>
+<p>我们可以在 Git Bash 中检测 GitHub 公钥设置是否成功,输入：<br><code>ssh git@github.com</code><br></p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="检测" alt="检测" title>
+                </div>
+                <div class="image-caption">检测</div>
+            </figure><br>看到 successfully 了么 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8">😎</span><p></p>
+<p>设置GitHub密钥,通过非对称加密的公钥与私钥来完成加密,公钥放置在GitHub上,私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户,所以每次推送都需要输入账号密码验证推送用户是否是合法用户,为了省去每次输入密码的步骤,采用了ssh,当你推送的时候,git就会匹配你的私钥跟GitHub上面的公钥是否是配对的,若是匹配就认为你是合法用户,则允许推送。这样可以保证每次的推送都是正确合法的。</p>
+<h2 id="下载Node"><a href="#下载Node" class="headerlink" title="下载Node"></a>下载Node</h2><p>安装 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node</a> 会包含环境变量及npm的安装<br>安装后,检测Node.js是否安装成功,在命令行中输入:<br><code>node -v</code><br>检测npm是否安装成功,在命令行中输入:<br><code>npm -v</code><br></p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="检测" alt="检测" title>
+                </div>
+                <div class="image-caption">检测</div>
+            </figure><br>到这了,安装Hexo的环境已经全部搭建完成。<span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8">😎</span><p></p>
+<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>Hexo就是我们的个人博客网站的框架,这里需要自己在电脑里创建一个文件夹,比如我在H盘中建了个blog的文件夹,Hexo框架与以后你自己发布的网页,搜友东西都在这个文件夹中。创建好后,在命令行中进入该文件夹,使用npm命令安装Hexo,输入：<br><code>npm install -g hexo-cli</code><br></p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="安装" alt="安装" title>
+                </div>
+                <div class="image-caption">安装</div>
+            </figure><br>【有警告是因为你的系统是Windows系统,所以可以忽略这个警告,对你没什么影响的。fsevent是系统的,你是在win下使用了,所以会有警告,忽略即可！】<p></p>
+<p>这个安装时间较长耐心等待！<br>安装完成后,初始化我们的博客,输入：<br><code>hexo init</code><br></p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="初始化" alt="初始化" title>
+                </div>
+                <div class="image-caption">初始化</div>
+            </figure><p></p>
+<p>这时候我们就可以检测我们的网站雏形,输入：<br><code>hexo s</code><br></p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="雏形" alt="雏形" title>
+                </div>
+                <div class="image-caption">雏形</div>
+            </figure><p></p>
+<p>这样就可以在本地浏览器中输入localhost:4000看了。<br>到此,你的博客就基本上完成了,当然仅限在本地浏览。<span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8">😎</span></p>
+<p>接下来,将我们的Hexo与GitHub关联起来,打开新建的blog文件夹下的_config.yml,翻到最后修改为：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line">	type: git</span><br><span class="line">	repo: 这里填入你之前在GitHub上创建仓库的完整路径,记得加上 .git</span><br><span class="line">	branch: master</span><br></pre></td></tr></tbody></table></figure><p></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="关联" alt="关联" title>
+                </div>
+                <div class="image-caption">关联</div>
+            </figure>
+<p>我这里是有notepad打开的,【注意加空格,之前没加部署不上】</p>
+<p>最后安装Git部署插件，输入命令：<br><code>npm install hexo-deployer-git –save</code><br></p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="部署插件" alt="部署插件" title>
+                </div>
+                <div class="image-caption">部署插件</div>
+            </figure><p></p>
+<p>警告没事。或者你可以到Hexo官网上下载插件到本地<br>这时，我们分别输入三条命令：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>这样你就可以访问 “你的仓库名”.github.io 来访问你的 blog 了 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8">😎</span></p>
+<p>累了，下次再写，连图片一起放！！！</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新：<time datetime="2019-05-11T13:40:05.336Z" itemprop="dateUpdated">2019-05-11 21:40:05</time>
+</span>
+
+
+        
+        原文链接：<a href="/posts/952d432d/" target="_blank" rel="external">https://liujan.top/posts/952d432d/</a>
+        
+    </div>
+    <footer>
+        <div onclick="location.href='https://liujan.top'">
+            <img src="/img/avatar.jpg" alt="Liu Jian">
+            <a>Liu Jian</a>
+        </div>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <nav class="myreward">
+            <a id="rewardBtn" href="javascript:;"><span>打&nbsp;赏</span><span>装成好像很多人打赏的样子</span></a>
+        </nav>
+    </div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://liujan.top/posts/952d432d/&title=《使用Hexo和GitHub搭建个人博客》 — Hi&pic=https://liujan.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://liujan.top/posts/952d432d/&title=《使用Hexo和GitHub搭建个人博客》 — Hi&source=前言网上已经有许多教程了,我的也差不多。就是想纪念一下我的个人博客,也方便小伙伴们来参考一下,手把手教,有图有文,一步一步,小白也可以做。 😎" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://liujan.top/posts/952d432d/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用Hexo和GitHub搭建个人博客》 — Hi&url=https://liujan.top/posts/952d432d/&via=https://liujan.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://liujan.top/posts/952d432d/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/4b73f3e6/" id="post-next" class="post-nav-link">
+        <h4 class="title" data-hover="下一篇：Test1">下一篇：Test1</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+    
+
+    
+
+    
+
+
+</article>
+
+</div>
+
+        <footer class="footer">
+    <div class="footer-content">
+        <span class="power">
+            <i class="icon icon-lg icon-copyright"></i>
+            2019
+            <i class="icon icon-lg icon-heart"></i>
+            <a href="https://liujan.top">Liu Jian の Blog</a>
+            <br>
+            Power by
+            <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>&nbsp;·&nbsp;
+            Theme
+            <a class="tomotoeslink" href="https://github.com/tomotoes/hexo-theme-tomotoes/" target="_blank" rel="external nofollow">tomotoes</a>
+        </span>
+
+        <br>
+
+        <span id="RunTime" style="color:#a7a7a2;"></span>
+        <br>
+
+        <span>
+            
+	<i class="icon icon-lg icon-user">
+<span id="busuanzi_container_site_uv" style="display:none">
+       访问用户：<span id="busuanzi_value_site_uv"></span>
+    </span>人</i>
+    ·
+    <i class="icon icon-lg icon-eye">
+    <span id="busuanzi_container_site_pv" style="display:none">
+      访问次数：<span id="busuanzi_value_site_pv"></span>
+    </span>次
+    </i>
+
+
+        </span>
+        <br>
+
+        <span class="license"><a target="_blank" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">博客内容遵循 知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+    </div>
+</footer>
+
+    </main>
+    
+        
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        <span>感谢您的鼓励支持！</span>
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" data-img="/img/dog.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechatPay">&nbsp;&nbsp;微信&nbsp;&nbsp;</span>
+                <span class="reward-toggle-item alipayPay">支付宝</span>
+            </div>
+        </label>
+        
+        <i class="icon icon-caret-up"></i>
+    </div>
+</div>
+
+
+    
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://liujan.top/posts/952d432d/&title=《使用Hexo和GitHub搭建个人博客》 — Hi&pic=https://liujan.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://liujan.top/posts/952d432d/&title=《使用Hexo和GitHub搭建个人博客》 — Hi&source=前言网上已经有许多教程了,我的也差不多。就是想纪念一下我的个人博客,也方便小伙伴们来参考一下,手把手教,有图有文,一步一步,小白也可以做。 😎" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://liujan.top/posts/952d432d/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用Hexo和GitHub搭建个人博客》 — Hi&url=https://liujan.top/posts/952d432d/&via=https://liujan.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://liujan.top/posts/952d432d/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p class="wechatshare">扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxklEQVR42u3aS26EQAwFQO5/abKNFAHPbtoiUvUqymSgOgvLv+OIz/nrJL//++nVd48dBxcXd5l73p4r1j00QV897f6SuLi4k9yr1ySPvv9WEv4SAy4u7pe5vSQmCWS4uLj/l5sEuLxwwsXF/TI3KX6SIFUNbRtrNVxc3AVu3qXc9/OW/i4uLm6LexbPvtQnejsuLu4INw8o+aAlSVB6YxhcXNwZ7tk6+St7OddDCMPFxR3kvjVY7S1hlDMyXFzcEW71EfeN1B7o4R+Hi4s7yK2mHdXwVB3APBQ/uLi4m7n54CQBVUNeufjBxcUd5PaWJ6qN1N6QtdzLwcXFXebmAauXoFQHJw+XxMXFHeTmgWaltVFd83oYsuLi4m7jNgNK8KA80ckvg4uLO8nthY9qclNNiQp7ZLi4uJu5vcboShpUbrbi4uKOc3sLl3mJ8sLf4OLibuaurEz1QtgLs19cXNzN3Pzkg5Zq+EuCafkyuLi4y9zqUCRZzug1TaJr4+LiDnLXA81bSxgPC2G4uLif5O4etBzV2+Di4n6Am78s+bRaJuHi4k5y8yZp9fVJQExKKVxc3EluOZTcljTV8qa6/IGLi7uZ+wMpqZCfMSn5XgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <!-- waves按钮特效 -->
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<!-- 主题配置脚本 -->
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+</script>
+
+<!-- jquery -->
+<script src="/js/jquery.min.js?v=3.0"></script>
+
+<!-- 搜索 -->
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item waves-block waves-effect" onclick="location.href='{path}'">
+    <div class="title ellipsis" title="{title}">{title}</div>
+</li>
+</template>
+
+
+<!-- main博客脚本 -->
+<script src="/js/main.min.js?v=3.0"></script>
+
+<!-- 动画&配置 -->
+<script src="/js/script.min.js?v=3.0"></script>
+
+<!-- 脚本管理 -->
+<script>
+
+if(window.innerWidth > 800){
+	/* 3D标题 */
+	$(".content-header").on("mousemove", threedee);
+
+	/* 底部追随鼠标 */
+	$(".footer").hover(2);
+
+	/* gotop键的涟漪 */
+	$("#gotop").hover(1);
+
+	/* 赞赏的粒子雨 */
+	$("#reward").hover(3);
+
+	/* 微信公众号的底部渲染 */
+	$("#wechat").hover(4);
+
+    /* 标题跳动 */
+    $(".archivestitle").bumpyText();
+
+	/* 图片点击放大 */
+	const postimg = jQuery(".post-content img:not(.github-emoji)");
+	postimg.on("click",function(){
+
+		mask.classList.add("in");
+		main.classList.add("Mask");
+		menu.classList.add("Mask");
+		var myimg = this.cloneNode(true);
+		myimg.classList.add("imgShow");
+
+		setTimeout(function(){
+			jQuery(myimg).animate({
+				opacity:"1"
+			},1000);
+		},0);
+
+		document.body.appendChild(myimg);
+
+		myimg.onclick=function(){
+			document.body.removeChild(myimg);
+			mask.classList.remove("in");
+			main.classList.remove("Mask");
+			menu.classList.remove("Mask");
+		};
+
+	});
+
+}
+
+/* 名字跳动 */
+$("#name").bumpyText();
+
+
+/* 网站运行时间 */
+setInterval(function () {
+	setTime("2019/05/1");
+}, 1000);
+
+/* 文章块的淡出 */
+postshow();
+
+/* 座右铭 */
+
+   getHitokoto();
+
+
+
+/* 粘贴提示 */
+G($(".post-content"), location.href, "Liu Jian");
+
+
+/* 控制台 */
+if (window.console && window.console.log) {
+	setTimeout(function () {
+		console.log("\n %c 一个坏掉的刘坚 %c  © Simon Ma  https://liujan.top/ \n\n", "color:#FFFFFB;background:#1abc9c;padding:5px 0;border-radius:.5rem 0 0 .5rem;", "color:#FFFFFB;background:#080808;padding:5px 0;border-radius:0 .5rem .5rem 0;");
+	}, 0);
+}
+
+</script>
+
+
+
+
+<!-- 公式渲染 -->
+
+
+
+<!-- 不蒜子 -->
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
