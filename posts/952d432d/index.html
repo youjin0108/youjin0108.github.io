@@ -59,7 +59,9 @@
 <meta property="og:image" content="https://liujan.top/posts/952d432d/雏形">
 <meta property="og:image" content="https://liujan.top/posts/952d432d/关联">
 <meta property="og:image" content="https://liujan.top/posts/952d432d/部署插件">
-<meta property="og:updated_time" content="2019-05-12T02:11:13.510Z">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/下载">
+<meta property="og:image" content="https://liujan.top/posts/952d432d/修改配置">
+<meta property="og:updated_time" content="2019-05-12T05:10:22.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo和GitHub搭建个人博客">
 <meta name="twitter:description" content="前言网上已经有许多教程了,我的也差不多。就是想纪念一下我的个人博客,也方便小伙伴们来参考一下,手把手教,有图有文,一步一步,小白也可以做。 😎">
@@ -235,7 +237,7 @@
         </div>
         <div class="post-count-custom">
             <i class="icon icon-lg icon-comment-o"></i>
-            阅读本文可能花费您&nbsp;<span class="post-count">4</span>&nbsp;分钟
+            阅读本文可能花费您&nbsp;<span class="post-count">5</span>&nbsp;分钟
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>网上已经有许多教程了,我的也差不多。就是想纪念一下我的个人博客,也方便小伙伴们来参考一下,手把手教,有图有文,一步一步,小白也可以做。 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8">😎</span></p>
@@ -332,8 +334,22 @@
 <p>警告没事。或者你可以到Hexo官网上下载插件到本地<br>这时，我们分别输入三条命令：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></tbody></table></figure><p></p>
 <p>这样你就可以访问 <code>"你的仓库名".github.io</code> 来访问你的 blog 了 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8">😎</span><br>总结一下使用的命令吧:</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g #安装Hexo</span><br><span class="line">hexo init #初始化博客</span><br><span class="line">hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br></pre></td></tr></tbody></table></figure>
-<p>累了,剩下的一会再写。</p>
-<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>我们先讲更换主题吧,毕竟也简单的，域名什么的也不急一时。我们先进入 Hexo<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a>页面,挑选喜欢的主题。</p>
+<p>累了,剩下的和图片一会再写。</p>
+<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>我们先讲更换主题吧,毕竟也简单的，域名什么的也不急一时。我们先进入 Hexo<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a>页面,挑选喜欢的主题。<br>选择完成输入输入 <code>git clone 主题的GitHub地址.git themes/主题名</code> ,如<br><code>git clone https://github.com/ZEROKISEKI/hexo-theme-cube.git themes/cube</code><br></p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="下载" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure><p></p>
+<p>之后我们要修改配置文件,修改位于博客根目录下的 <code>_config.yml</code> （站点配置文件：/blog/_config.yml）内的 <code>theme:</code> 选项值为主题名<br></p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="修改配置" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure><p></p>
+<p>这样就好了,当然还有一些配置需要修改,这就要看你主题的GitHub上具体怎么说了,上面也有教程教你怎么下载和修改,包括插件、主题的 <code>_config.yml</code> （主题配置文件,themes/cube/_config.yml）修改什么的,这就要看具体情况了。 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8">😎</span></p>
 <h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><h1 id="编写文章"><a href="#编写文章" class="headerlink" title="编写文章"></a>编写文章</h1><h1 id="为域名使用https"><a href="#为域名使用https" class="headerlink" title="为域名使用https"></a>为域名使用https</h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -359,7 +375,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-05-12T02:11:13.510Z" itemprop="dateUpdated">2019-05-12 10:11:13</time>
+    最后更新：<time datetime="2019-05-12T05:10:22.384Z" itemprop="dateUpdated">2019-05-12 13:10:22</time>
 </span>
 
 
