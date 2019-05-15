@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liujan.top/"/>
-  <updated>2019-05-14T15:22:54.923Z</updated>
+  <updated>2019-05-14T15:25:46.936Z</updated>
   <id>https://liujan.top/</id>
   
   <author>
@@ -15,26 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Test</title>
-    <link href="https://liujan.top//posts/784dd132/"/>
-    <id>https://liujan.top//posts/784dd132/</id>
-    <published>2019-05-14T12:40:03.000Z</published>
-    <updated>2019-05-14T15:22:54.923Z</updated>
-    
-    <content type="html"><![CDATA[<p>这部分是测试内容,主要是测试一些bug,还请忽略。<br><a id="more"></a></p><h1 id="微博图床测试"><a href="#微博图床测试" class="headerlink" title="微博图床测试"></a>微博图床测试</h1><p>测试微博图床使用 http https 自适应 之后的图片显示是否成功</p><h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><p><img src="http://wx3.sinaimg.cn/large/006zTujZly1g314p5yt21j311y0lcqv5.jpg" alt="P13"></p><h2 id="https"><a href="#https" class="headerlink" title="https"></a>https</h2><p><img src="https://ws4.sinaimg.cn/large/006zTujZly1g314p5yt21j311y0lcqv5.jpg" alt="P13"></p><h2 id="自适应"><a href="#自适应" class="headerlink" title="自适应"></a>自适应</h2><p><img src="//ws2.sinaimg.cn/large/006zTujZly1g314p5yt21j311y0lcqv5.jpg" alt="P13"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这部分是测试内容,主要是测试一些bug,还请忽略。&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="test" scheme="https://liujan.top/tags/test/"/>
-    
-  </entry>
   
   <entry>
     <title>使用Hexo和GitHub搭建个人博客</title>
