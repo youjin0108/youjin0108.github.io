@@ -47,7 +47,7 @@
 <meta property="og:site_name" content="Hi">
 <meta property="og:description" content="document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             img.style">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-09T07:52:50.007Z">
+<meta property="og:updated_time" content="2019-05-15T05:20:53.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hi">
 <meta name="twitter:description" content="document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             img.style">
@@ -203,26 +203,13 @@
 <div class="container body-wrap">
     <article class="page-article fade" itemprop="blogPage">
         
-            <div class="post-content page-content" id="page-content" itemprop="pageContent">
-                <script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+            <div class="card page-about-me flex-row">
+                <a href="/" class="avatar waves-effect waves-circle waves-light"><img src="/img/avatar.jpg"></a>
+                <div class="content flex-col">
+                    <p><strong>Liu Jian</strong></p>
+                    <p><em>Liu Jian の Blog</em></p>
+                    <p>这里的老大 <br> <br> <br> 姓名：刘坚 （这个是真的） <br> 年龄：18 （当然是假的了） <br> 性别：公 （单身可撩） <br> 星座：摩羯座 （高冷的一批） <br> 身高：175 （截肢前2米） <br> 体重：56 （单位 g） <br> 地址：日本 秋叶原 （梦里是这样的） <br> 爱好：当然是女孩子了 （好吧，热爱运动，旅游，看书） <br> Q  Q ：1183143919 （非诚勿扰） <br> 电话：13812575671 （微信同号） <br> 合作伙伴：小故事 （当然不是真名了） <br> 微信公众号：北巷栀酒Amor （与小故事合作，欢迎关注） <br></p>
+                </div>
             </div>
         
 
