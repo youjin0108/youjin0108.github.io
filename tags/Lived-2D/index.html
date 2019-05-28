@@ -6,7 +6,7 @@
     
     
     
-    <title>Hi | Liu Jian の Blog</title>
+    <title>标签: Lived 2D | Hi | Liu Jian の Blog</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     
     <meta name="theme-color" content="#77AAFF">
@@ -43,7 +43,7 @@
 <meta name="keywords" content="Liu Jian,刘坚,Liu,Jian,liujan">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hi">
-<meta property="og:url" content="https://liujan.top/index.html">
+<meta property="og:url" content="https://liujan.top/tags/Lived-2D/index.html">
 <meta property="og:site_name" content="Hi">
 <meta property="og:description" content="My Blog">
 <meta property="og:locale" content="zh-CN">
@@ -85,7 +85,7 @@
     <div class="scroll-wrap flex-col">
       <ul class="nav">
         
-              <li class="waves-block waves-effect active">
+              <li class="waves-block waves-effect">
                   <a href="/">
                     <i class="icon icon-lg icon-home"></i>
                     <span>主 页</span><i class="icon icon-lg icon-caret-left"></i>
@@ -106,7 +106,7 @@
                   </a>
               </li>
             
-              <li class="waves-block waves-effect">
+              <li class="waves-block waves-effect active">
                   <a href="/tags">
                     <i class="icon icon-lg icon-tags"></i>
                     <span>标 签</span><i class="icon icon-lg icon-caret-left"></i>
@@ -151,7 +151,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Hi</div>
+        <div class="flex-col header-title ellipsis">标签: Lived 2D</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -168,19 +168,29 @@
         </a>
     </div>
 </header>
-<header class="content-header index-header">
+<header class="content-header tags-header">
     
     
     <div class="container fade-scale">
         <div id="myheader">
             <h1 class="title">
-                 
-                    Hi
                 
             </h1>
             <h5 class="subtitle">
                 
-                    Welcome To Liu Jian の Blog
+                    <h1 id="pagetitle" class="archivestitle"></h1>
+                    <script>
+                        if(location.href.indexOf('about')!=-1){
+                            pagetitle.textContent = '关于';
+                        }else if(location.href.indexOf('tags')!=-1||location.href.indexOf('categories')!=-1){
+                            var a=location.href.substring(location.href.length-5,location.href.length-1);
+                            if(a==='tags'){
+                                pagetitle.textContent = '标签';
+                            }else if(a==='ries'){
+                                pagetitle.textContent = '分类';
+                            }
+                        }
+                    </script>
                 
             </h5>
         </div>
@@ -188,13 +198,30 @@
 
 </header>
 
-<div class="container body-wrap">
-    <ul class="post-list">
-    
-        <li class="post-list-item fade">
-            <article id="post-博客美化篇-看板娘" class="article-card article-type-post" itemprop="blogPost">
 
-    
+    <div class="container body-wrap fade">
+        
+            
+            
+            <h5 class="tag-tip">
+                <i class="icon icon-tag"></i>
+                关于
+                <span style="color:rgb(100, 100, 100)">Lived 2D</span>
+                共1篇文章
+            </h5>
+            <div class="waterfall">
+            
+                <article class="archive-article" onclick="location.href='/posts/78fd139f/'">
+    <div class="archive-article-date">
+      
+      <time class="my-post-time">
+        <i class="icon icon-lg icon-file-text-o"></i>
+        &nbsp;
+          2019-05-28
+      </time>
+    </div>
+    <div class="archive-article-inner">
+      
 
 
   
@@ -205,115 +232,15 @@
 
 
 
-
-     <div class="post-meta">
-        <time class="post-time" title="2019-05-28 21:15:55" datetime="2019-05-28T13:15:55.000Z" itemprop="datePublished">2019-05-28</time>
-
-    </div>
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>看到右边的妹子了么 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60f.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span> , 以前看到别人网站上有个看板娘就觉得很好玩, 作为死宅, 这种妹子怎么能没有。虽然现在还不理想, 不过有空还是会改进的。老样子, 先炫耀一下。(悄悄感谢 <a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">大佬</a> )<br></p>
-    
-        <div class="post-more-div">
-            <a href="/posts/78fd139f/" class="post-more waves-button">
-                阅读全文 »
-            </a>
-        </div>
-    </div>
-    
-    <div class="post-footer">
-        
+      <br>
+      
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lived-2D/">Lived 2D</a></li></ul>
 
     </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-使用Hexo和GitHub搭建个人博客" class="article-card article-type-post" itemprop="blogPost">
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/posts/952d432d/">使用Hexo和GitHub搭建个人博客</a>
-    </h3>
-  
-
-
-
-
-     <div class="post-meta">
-        <time class="post-time" title="2019-05-11 19:36:07" datetime="2019-05-11T11:36:07.000Z" itemprop="datePublished">2019-05-11</time>
-
-    </div>
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>网上已经有许多教程了,我的也差不多。就是想纪念一下我的个人博客,也方便小伙伴们来参考一下,手把手教,有图有文,一步一步,小白也可以做。 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png?v8">😎</span><br></p>
-    
-        <div class="post-more-div">
-            <a href="/posts/952d432d/" class="post-more waves-button">
-                阅读全文 »
-            </a>
-        </div>
-    </div>
-    
-    <div class="post-footer">
+  </article>
+            
+            </div>
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-hello-world" class="article-card article-type-post" itemprop="blogPost">
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/posts/16107/">Hello World</a>
-    </h3>
-  
-
-
-
-
-     <div class="post-meta">
-        <time class="post-time" title="2019-05-08 13:54:46" datetime="2019-05-08T05:54:46.874Z" itemprop="datePublished">2019-05-08</time>
-
-    </div>
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br></p>
-    
-        <div class="post-more-div">
-            <a href="/posts/16107/" class="post-more waves-button">
-                阅读全文 »
-            </a>
-        </div>
-    </div>
-    
-</article>
-
-        </li>
-    
-    </ul>
-
-    
 
 </div>
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liujan.top/"/>
-  <updated>2019-05-17T04:59:24.217Z</updated>
+  <updated>2019-05-28T13:50:50.965Z</updated>
   <id>https://liujan.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客美化篇: 看板娘</title>
+    <link href="https://liujan.top//posts/78fd139f/"/>
+    <id>https://liujan.top//posts/78fd139f/</id>
+    <published>2019-05-28T13:15:55.000Z</published>
+    <updated>2019-05-28T13:50:50.965Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>看到右边的妹子了么 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60f.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span> , 以前看到别人网站上有个看板娘就觉得很好玩, 作为死宅, 这种妹子怎么能没有。虽然现在还不理想, 不过有空还是会改进的。老样子, 先炫耀一下。(悄悄感谢 <a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">大佬</a> )<br><a id="more"></a></p><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>看板娘是一种职业和习惯称呼，也是ACGN次文化中的萌属性之一。简而言之就是小店的女服务生，也有吸引顾客，招揽生意，提高人气等作用类似品牌形象代言人的含义。</p><h1 id="等等再写-shit"><a href="#等等再写-shit" class="headerlink" title="等等再写 :shit:"></a>等等再写 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f4a9.png?v8) center/contain" data-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4a9.png?v8">💩</span></h1><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>目前还不算完善, 比如位置, 大小, 交流等, 不过会更新的 (不知何年何月) , 会在欢迎大家评论交流提意见。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;看到右边的妹子了么 &lt;span class=&quot;github-emoji&quot; style=&quot;color: transparent;background:no-repeat url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f60f.png?v8) center/contain&quot; data-src=&quot;https://assets-cdn.github.com/images/icons/emoji/unicode/1f60f.png?v8&quot;&gt;😏&lt;/span&gt; , 以前看到别人网站上有个看板娘就觉得很好玩, 作为死宅, 这种妹子怎么能没有。虽然现在还不理想, 不过有空还是会改进的。老样子, 先炫耀一下。(悄悄感谢 &lt;a href=&quot;https://github.com/EYHN/hexo-helper-live2d&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;大佬&lt;/a&gt; )&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="blog配置" scheme="https://liujan.top/categories/blog%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Hexo" scheme="https://liujan.top/tags/Hexo/"/>
+    
+      <category term="Lived 2D" scheme="https://liujan.top/tags/Lived-2D/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Hexo和GitHub搭建个人博客</title>
